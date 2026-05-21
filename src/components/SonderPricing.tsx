@@ -69,13 +69,13 @@ export function SonderPricing() {
           >
             <div>
               <p className="text-sm font-bold tracking-wider text-gray-500 uppercase mb-4">Semana Completa</p>
-              <h3 className="font-serif text-4xl text-sonder-darkgreen mb-2">15% Dto.</h3>
-              <p className="text-sonder-darkgreen/70">sobre el valor total</p>
+              <h3 className="font-serif text-4xl text-sonder-darkgreen mb-2">$1.657.500</h3>
+              <p className="text-sonder-darkgreen/70">7 noches (15% Dto. incluido)</p>
             </div>
             <div className="mt-8 pt-6 border-t border-gray-100 text-sm text-sonder-darkgreen/80 flex flex-col gap-3">
               <p>✓ Estadías de 7+ noches</p>
-              <p>✓ Descuento automático</p>
-              <p>✓ Experiencia inmersiva</p>
+              <p>✓ Descuento del 15% automático</p>
+              <p>✓ Ahorro de $292.500 sobre tarifa base</p>
             </div>
           </div>
 

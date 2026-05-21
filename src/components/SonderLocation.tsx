@@ -5,7 +5,7 @@ export function SonderLocation() {
   const { ref, isInView } = useInViewAnimation<HTMLDivElement>();
 
   return (
-    <section id="como-llegar" ref={ref} className="w-full bg-[#111111] text-white py-24 px-6 md:px-12 border-t border-gray-800">
+    <section id="como-llegar" ref={ref} className="w-full bg-sonder-cream text-sonder-darkgreen py-24 px-6 md:px-12 border-t border-gray-200">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
         
         {/* Left Side: Info */}
@@ -13,47 +13,47 @@ export function SonderLocation() {
           className={`w-full lg:w-1/2 flex flex-col ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
           style={{ animationDelay: '0.1s' }}
         >
-          <p className="text-sm uppercase tracking-[0.2em] text-sonder-yellow font-bold mb-2">
+          <p className="text-sm uppercase tracking-[0.2em] text-sonder-darkyellow font-bold mb-2">
             UBICACIÓN ESTRATÉGICA
           </p>
-          <div className="w-12 h-1 bg-sonder-yellow mb-6"></div>
+          <div className="w-12 h-1 bg-sonder-darkyellow mb-6"></div>
           
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-sonder-darkgreen mb-8 leading-tight">
             A un paso del sol<br />de Santa Fe
           </h2>
           
-          <p className="text-gray-300 leading-relaxed mb-10 text-lg">
+          <p className="text-sonder-darkgreen/80 leading-relaxed mb-10 text-lg">
             Ubicado en un sector tranquilo y seguro de Santa Fe de Antioquia, el apartasol te ofrece la privacidad que buscas sin alejarte de las comodidades del municipio.
           </p>
 
           <div className="flex flex-col gap-6">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-sonder-yellow/20 flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5 text-sonder-yellow" />
+              <div className="w-10 h-10 rounded-full bg-sonder-lightgreen flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-5 h-5 text-sonder-darkgreen" />
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-1">Santa Fe de Antioquia</h4>
-                <p className="text-gray-400 text-sm">A pocos minutos del parque principal y la zona histórica.</p>
+                <h4 className="font-bold text-lg text-sonder-darkgreen mb-1">Santa Fe de Antioquia</h4>
+                <p className="text-sonder-darkgreen/70 text-sm">A pocos minutos del parque principal y la zona histórica.</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-sonder-yellow/20 flex items-center justify-center flex-shrink-0">
-                <Clock className="w-5 h-5 text-sonder-yellow" />
+              <div className="w-10 h-10 rounded-full bg-sonder-lightgreen flex items-center justify-center flex-shrink-0">
+                <Clock className="w-5 h-5 text-sonder-darkgreen" />
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-1">A 1 hora de Medellín</h4>
-                <p className="text-gray-400 text-sm">Vía rápida por el túnel de occidente. Un trayecto cómodo y panorámico.</p>
+                <h4 className="font-bold text-lg text-sonder-darkgreen mb-1">A 1 hora de Medellín</h4>
+                <p className="text-sonder-darkgreen/70 text-sm">Vía rápida por el túnel de occidente. Un trayecto cómodo y panorámico.</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-sonder-yellow/20 flex items-center justify-center flex-shrink-0">
-                <Navigation className="w-5 h-5 text-sonder-yellow" />
+              <div className="w-10 h-10 rounded-full bg-sonder-lightgreen flex items-center justify-center flex-shrink-0">
+                <Navigation className="w-5 h-5 text-sonder-darkgreen" />
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-1">Fácil acceso</h4>
-                <p className="text-gray-400 text-sm">Vías pavimentadas hasta la puerta del apartasol. Parqueadero privado incluido.</p>
+                <h4 className="font-bold text-lg text-sonder-darkgreen mb-1">Fácil acceso</h4>
+                <p className="text-sonder-darkgreen/70 text-sm">Vías pavimentadas hasta la puerta del apartasol. Parqueadero privado incluido.</p>
               </div>
             </div>
           </div>
