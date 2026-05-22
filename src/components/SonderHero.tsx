@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import { Button } from './Button';
-import { MapPin, Calendar, Users, Menu } from 'lucide-react';
+import { MapPin, Calendar, Users, Menu, X } from 'lucide-react';
 
 import img1 from '../assets/img1.jpeg';
 
@@ -10,6 +10,7 @@ export function SonderHero() {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState(2);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleGuestsChange = (val: number) => {
     setGuests(prev => Math.min(10, Math.max(1, prev + val)));
@@ -19,7 +20,7 @@ export function SonderHero() {
     const checkInStr = checkIn ? checkIn : 'Por definir';
     const checkOutStr = checkOut ? checkOut : 'Por definir';
     const message = `¡Hola! Me interesa reservar el Apartasol. Fechas: ${checkInStr} al ${checkOutStr} para ${guests} huéspedes. ¿Tienen disponibilidad?`;
-    const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/573226707469?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -45,20 +46,97 @@ export function SonderHero() {
           </a>
         </div>
 
-        <button className="lg:hidden text-sonder-darkgreen">
+        <button 
+          onClick={() => setIsMenuOpen(true)}
+          className="lg:hidden text-sonder-darkgreen focus:outline-none p-1 hover:opacity-75 transition-opacity"
+          aria-label="Abrir menú"
+        >
           <Menu className="w-6 h-6" />
         </button>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-300 lg:hidden ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        <div 
+          className={`absolute top-0 right-0 w-[280px] sm:w-[320px] h-full bg-sonder-cream p-6 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-out ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex flex-col gap-8">
+            <div className="flex items-center justify-between pb-6 border-b border-sonder-darkgreen/10">
+              <span className="font-serif font-bold text-sonder-darkgreen text-lg">Menú</span>
+              <button 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sonder-darkgreen p-1 hover:opacity-70 transition-opacity"
+                aria-label="Cerrar menú"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-6 text-base text-sonder-darkgreen font-medium">
+              <a 
+                href="#el-apartasol" 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-sonder-yellow transition-colors py-2 border-b border-sonder-darkgreen/5"
+              >
+                El Apartasol
+              </a>
+              <a 
+                href="#espacios" 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-sonder-yellow transition-colors py-2 border-b border-sonder-darkgreen/5"
+              >
+                Espacios
+              </a>
+              <a 
+                href="#comodidades" 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-sonder-yellow transition-colors py-2 border-b border-sonder-darkgreen/5"
+              >
+                Comodidades
+              </a>
+              <a 
+                href="#tarifas" 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-sonder-yellow transition-colors py-2 border-b border-sonder-darkgreen/5"
+              >
+                Tarifas
+              </a>
+              <a 
+                href="#como-llegar" 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-sonder-yellow transition-colors py-2 border-b border-sonder-darkgreen/5"
+              >
+                Cómo llegar
+              </a>
+            </nav>
+          </div>
+
+          <div className="flex flex-col gap-4 mt-auto">
+            <a href="#reservar" onClick={() => setIsMenuOpen(false)}>
+              <Button variant="dark" className="w-full py-3 text-sm tracking-wider uppercase font-bold">
+                Reservar Directo
+              </Button>
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Content */}
       <section ref={ref} className="w-full relative px-6 md:px-12 pt-12 pb-32 flex flex-col md:flex-row items-center justify-between">
         <div className="w-full md:w-1/2 z-10 pr-4 md:pr-12">
           <h1 
-            className={`font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-sonder-darkgreen mb-6 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+            className={`font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-sonder-darkgreen mb-6 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
             style={{ animationDelay: '0.1s' }}
           >
-            Todo lo que tu<br />
-            familia necesita para<br />
+            Todo lo que tu<br className="hidden md:inline" /> familia necesita para<br className="hidden md:inline" />
             <span className="relative inline-block text-sonder-yellow italic font-serif px-2 transition-all duration-300 hover:scale-105 select-none">
               descansar
               <svg 

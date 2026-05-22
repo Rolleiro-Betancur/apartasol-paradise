@@ -61,7 +61,7 @@ export function SonderLocation() {
 
         {/* Right Side: Interactive Google Map */}
         <div 
-          className={`w-full lg:w-1/2 relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+          className={`w-full lg:w-1/2 relative h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
           style={{ animationDelay: '0.3s' }}
         >
           <iframe 

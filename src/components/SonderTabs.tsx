@@ -66,20 +66,22 @@ export function SonderTabs() {
         </div>
 
         <div 
-          className={`w-full border-b border-gray-300 mb-12 flex overflow-x-auto hide-scrollbar ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+          className={`w-full mb-12 flex flex-wrap md:flex-nowrap gap-2 md:gap-0 md:border-b md:border-gray-300 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
           style={{ animationDelay: '0.2s' }}
         >
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-8 py-4 text-sm md:text-base font-medium whitespace-nowrap transition-colors relative ${
-                activeTab === tab ? 'text-sonder-darkgreen' : 'text-sonder-darkgreen/50 hover:text-sonder-darkgreen/80'
+              className={`text-xs sm:text-sm md:text-base font-medium transition-all relative whitespace-nowrap px-4 py-2.5 rounded-full border border-sonder-darkgreen/15 md:border-none md:rounded-none md:px-8 md:py-4 ${
+                activeTab === tab 
+                  ? 'bg-sonder-darkgreen text-white md:bg-transparent md:text-sonder-darkgreen' 
+                  : 'bg-white text-sonder-darkgreen/60 hover:text-sonder-darkgreen md:bg-transparent'
               }`}
             >
               {tab}
               {activeTab === tab && (
-                <div className="absolute bottom-[-1px] left-0 w-full h-0.5 bg-sonder-darkgreen" />
+                <div className="hidden md:block absolute bottom-[-1px] left-0 w-full h-0.5 bg-sonder-darkgreen" />
               )}
             </button>
           ))}

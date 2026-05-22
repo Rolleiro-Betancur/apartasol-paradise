@@ -22,7 +22,7 @@ export function SonderFooter() {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold uppercase text-xs tracking-wider">Contacto</h4>
             <a href="#reservar" className="hover:underline text-sm opacity-80">Reservar Directo</a>
-            <a href="https://wa.me/573000000000" target="_blank" rel="noreferrer" className="hover:underline text-sm opacity-80">WhatsApp</a>
+            <a href="https://wa.me/573226707469" target="_blank" rel="noreferrer" className="hover:underline text-sm opacity-80">WhatsApp</a>
             <a href="#como-llegar" className="hover:underline text-sm opacity-80">Ubicación</a>
           </div>
         </div>
